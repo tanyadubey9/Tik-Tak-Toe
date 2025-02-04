@@ -19,10 +19,9 @@ const winPatterns = [
 ];
 
 const resetGame = () => {
-    let turn0 = true;
+    turn0 = true;
     enableBtn();
     box.classList.add('hide');
-    msg.textContent = '';
     count = 0;
 }
 
@@ -49,7 +48,7 @@ btns.forEach((btn) => {
 });
 
 const gameDraw = () => {
-    msg.textContent = 'It\'s a draw!';
+    msg.innerText = 'It\'s a draw!';
     box.classList.remove('hide');
     disableBtn();
 }
@@ -81,6 +80,7 @@ const checkWinner = () => {
         if(a != '' && b != '' && c != ''){
             if (a == b && b == c) {
                 showWinner(a);
+                return true;
             }
         }
     })
